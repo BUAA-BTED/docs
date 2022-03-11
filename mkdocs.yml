@@ -1,0 +1,66 @@
+site_name: 电子设计基础训练硬件文档
+
+nav:
+  - index.md
+
+theme:
+  name: material
+  font: false
+  icon:
+    logo: material/memory
+  favicon: assets/favicon.png
+  palette:
+    primary: black
+    accent: deep orange
+  features:
+    - navigation.tabs
+    - navigation.top
+
+markdown_extensions:
+  - toc:
+      permalink:
+  - abbr
+  - admonition
+  - attr_list
+  - sane_lists
+  - footnotes
+  - def_list
+  - pymdownx.details
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: wavedrom
+          class: wavedrom
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.tabbed
+  - pymdownx.highlight:
+      use_pygments: false
+      linenums: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg  
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+
+plugins:
+  - search
+  - markdownwavedrom
+
+extra_javascript:
+  - lib/iframe-resizer/iframeResizer.min.js
+  - lib/highlight.js/highlight.min.js
+  - lib/katex/katex.min.js
+  - lib/katex/contrib/auto-render.min.js
+  - lib/wavedrom/skin-default.js
+  - lib/wavedrom/wavedrom-2.6.8.js
+  - lib/config.js
+
+extra_css:
+  - lib/highlight.js/styles/default.min.css
+  - lib/katex/katex.min.css

@@ -1,93 +1,25 @@
-# 特性简介
-mkdocs-material 支持 Markdown 的大部分特性，同时也提供了一些特殊的特性，比如 emojis 
-:smile: ，比如按键图标化 ++ctrl+alt+delete++ ，完整的特性可以查阅[官方文档](https://squidfunk.github.io/mkdocs-material/reference/){target=_blank}。强烈建议在编写文档前打开这个页面作为 “Cookbook” 查阅。
+# 欢迎
 
-*[emojis]: An emoji is a pictogram, logogram, ideogram or smiley embedded in text and used in electronic messages and web pages.
-
-### 表格
-$A$|$B$|$Y=A\oplus B$|
-:-:|:-:|:-:
-0|0|:material-close: 
-0|1|:material-check: 
-1|0|:material-check: 
-1|1|:material-close: 
-
-### 任务列表
-- [ ] 二季度工作计划
-    - [X] BEDT 课程运行
-    - [ ] 空间无线电接收
-        - [X] PlutoSDR 的 IIO 驱动
-- [ ] 三季度工作计划
-
-
-### MathJex 公式
-```latex
-X_n \oplus R_n \oplus R_n = X_n \oplus(R_n \oplus R_n) = X_n \oplus 0 = X_n
-```
-
-$$
-X_n \oplus R_n \oplus R_n = X_n \oplus(R_n \oplus R_n) = X_n \oplus 0 = X_n
-$$
-
-!!! tip "一些增强或拓展了的特性"
-    除了 material 提供的特性外，我们还增强了代码块的功能，可以通过在多行代码块起始符号后跟语言名字（例如 <code>```python</code>）来指定高亮的语言。
+!!! info "第一次来到这里？"
     
+    请通过上方的导航栏查看不同栏目的文档
+    
+    上次更新：`{{ git.short_commit}} ({{ git.date}}) by {{ git.author}}`
 
-### 代码高亮
-```verilog
-// 前提条件： reg [6:0] shift_register
-wire feedback = shift_register[6] ^ shift_register[3];
-// 这是常见的组合逻辑描述方法之一：直接定义 wire
-```
+欢迎大家来到**电子设计基础训练** (Basic Training for Electronic Design, **BTED**) 课程硬件文档中心。
 
-### 波形图
-基于 [wavedrom](https://wavedrom.com){target=_blank}。当语言指定为 `wavedrom` 时，在代码框内填入对应的波形代码，即可渲染出波形图：
+在本课程中，每位同学都会拿到一套由课程组提供的硬件板卡，学习并使用 Arduino 框架对其进行编程控制。**硬件是躯体，软件是灵魂**，我们希望大家能够在实验的过程中，更加深刻地认识到这一点。
 
-```wavedrom
-{signal: [
-  {name: 'clk', wave: 'P......'},
-  {name: 'fcw', wave: 'x..3x..', data: ['fcw'],node:'...K', phase:0.5},
-  {name: 'load', wave: '0..10..', phase: 0.5},
-  {name: 'fcw_reg', wave: '4..3...', data: ['last_fcw','fcw']},
-  {},
-  ['buffered',
-    {name: 'phase_acc_next1', wave: '4443333', node:'...a'},
-    {name: 'phase_acc', wave: '4444333', node:'....b'}
-  ],
-  {},
-  ['direct',
-    {name: 'phase_acc_next2', wave: '4443333', node:'...c', phase:0.5},
-    {name: 'phase_acc', wave: '4443333', node:'...d'}
-  ]
-  ],
-  edge: [
-      'a~b', 'c~d', 'K-c'
-  ]
-}
-```
+2022 年春季学期，我们在小班范围内试点使用以 ==ESP32 单片机== 为核心的硬件实验平台。它与过去使用的 AVR 单片机 （Arduino UNO R3）在“硬指标”上有些许不同。但大家不必担心，Arduino 实际上是一个**跨平台**的编程框架，这两种单片机在软件开发上是通用的。
 
-描述这个波形图的代码如下，你可以通过 [在线编辑器](https://wavedrom.com/editor.html){target=_blank} 来交互式地创建波形图，或使用 VSCode 的 Markdown Preview Enhanced
- 插件。
+ESP32 集成了 ^^Wi-Fi 和蓝牙^^，使得它能够更轻易地开发物联网相关项目；同时它的性能也更加强大，这为提供更好的人机交互打下来基础；最关键的是，它的制造商——上海乐鑫对开源硬件提供了很好的支持。
 
-```json
-{signal: [
-  {name: 'clk', wave: 'P......'},
-  {name: 'fcw', wave: 'x..3x..', data: ['fcw'],node:'...K', phase:0.5},
-  {name: 'load', wave: '0..10..', phase: 0.5},
-  {name: 'fcw_reg', wave: '4..3...', data: ['last_fcw','fcw']},
-  {},
-  ['buffered',
-    {name: 'phase_acc_next1', wave: '4443333', node:'...a'},
-    {name: 'phase_acc', wave: '4444333', node:'....b'}
-  ],
-  {},
-  ['direct',
-    {name: 'phase_acc_next2', wave: '4443333', node:'...c', phase:0.5},
-    {name: 'phase_acc', wave: '4443333', node:'...d'}
-  ]
-  ],
-  edge: [
-      'a~b', 'c~d', 'K-c'
-  ]
-}
-```
+!!! hint "Arduino 的概念"
+
+    Arduino 拥有多重含义：
+    
+    * 一家开源硬件、软件公司，负责开源社区的维护
+    * 一个开源项目的名称，包括了** Arduino 编程框架**和 IDE
+    * 一个开源硬件的系列名称，最常见的是基于 AVR 的 Arduino UNO R3 （常被称作 Arduino 板）
+
+让我们从了解 [核心板](/basic/esp32-core/) 开始吧！

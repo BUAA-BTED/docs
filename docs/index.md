@@ -22,4 +22,4 @@ ESP32 集成了 ^^Wi-Fi 和蓝牙^^，使得它能够更轻易地开发物联网
     * 一个开源项目的名称，包括了** Arduino 编程框架**和 IDE
     * 一个开源硬件的系列名称，最常见的是基于 AVR 的 Arduino UNO R3 （常被称作 Arduino 板）
 
-让我们从 [开局指南](https://buaa-bted.github.io/docs/basic/esp32-install/) 开始吧！
+让我们从 [开局指南](https://buaa-bted.github.io/docs/basic/install/) 开始吧！

@@ -1,5 +1,5 @@
 site_name: 电子设计基础训练硬件文档
-
+copyright: Copyright &copy; 2022 BTED 课程组
 nav:
   - index.md
   - 基础文档:

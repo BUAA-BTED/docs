@@ -6,6 +6,8 @@
     
     上次更新：`{{ git.short_commit}} ({{ git.date}}) by {{ git.author}}`
 
+    ©2022 本课程组
+
 欢迎大家来到**电子设计基础训练** (Basic Training for Electronic Design, **BTED**) 课程硬件文档中心。
 
 在本课程中，每位同学都会拿到一套由课程组提供的硬件板卡，学习并使用 Arduino 框架对其进行编程控制。**硬件是躯体，软件是灵魂**，我们希望大家能够在实验的过程中，更加深刻地认识到这一点。
